@@ -1,119 +1,201 @@
-/* Base Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
 
+:root{
+  --brand:#6a4ea3;            /* Primary accent (currently HAIR purple) */
+  --brand-ink:#3f2f66;        /* Darker variant for headings */
+  --text:#1f2430;             /* Body text */
+  --muted:#646b7a;            /* Secondary text */
+  --bg:#ffffff;               /* Page background */
+  --panel:#f6f4fb;            /* Soft panel background tinted toward brand */
+  --line:#e6e3ef;             /* Subtle divider */
+  --nav-link:#FFFFFF;             /* Nav Link base */
+  --link:#5a43a0;             /* Link base */
+  --link-hover:#7a61c7;       /* Link hover */
+  --focus:#0f62fe;            /* Accessible focus color */
+  --shadow:0 6px 18px rgba(29,19,53,.08);
+  --radius:14px;
+  --radius-sm:10px;
+  --max:960px;
+}
+html{
+  background:var(--bg); color:var(--text);
+}
+/* Base Typography */
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  margin: 0;
+  font-family: 'Georgia', serif;
+  font-size: 18px;
+  background:var(--bg); color:var(--text);
   line-height: 1.6;
-  padding: 1rem;
-  background-color: #fafafa;
-  color: #222;
+  padding: 0 ;
+}
+  
+h1, h2, h3 {
+  font-family: 'Helvetica Neue', sans-serif;
+  font-weight: 600;
+  color:var(--brand-ink); 
+  margin-top: 2rem;
 }
 
-header {
+.site-title {
+  font-size: 2.5rem;
   text-align: center;
-  margin-bottom: 2rem;
-  padding-bottom: 1rem;
-  border-bottom: 1px solid #ccc;
-}
-
-header h1 {
-  font-size: 2rem;
   margin-bottom: 0.25rem;
 }
 
-header p {
-  color: #555;
+.site-quote {
+  text-align: center;
   font-style: italic;
+  color: #6a4ea3;
 }
 
-nav ul {
-  list-style: none;
+/* Navigation */
+.nav {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  align-items: center;
   flex-wrap: wrap;
-  gap: 0.75rem;
-  margin-top: 1rem;
-  padding: 0;
+  background-color: #4e3f55;
+  color: white;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  margin-top: 0px;
 }
 
-nav a {
+.nav-title {
+  font-family: 'Helvetica Neue', sans-serif;
+  font-size: 1.4rem;
+  font-weight: bold;
+
+}
+.nav-title a{
+    color: white;
   text-decoration: none;
-  color: #007acc;
   font-weight: 500;
+  transition: color 0.3s ease;
+}
+.nav-title a:hover {
+  color: #dccded;
+}
+.nav-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 1rem;
 }
 
-nav a:hover {
-  text-decoration: underline;
+.nav-links a{
+  text-decoration:none; color:var(--nav-link); padding:.4rem .7rem; border-radius:var(--radius-sm);
+}
+.nav-links a:hover{ background:var(--panel); color:var(--brand-ink); }
+.nav-links a:focus{ outline:3px solid var(--focus); outline-offset:2px; border-radius:6px; }
+
+.nav-links1 a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links1 a:hover {
+  color: #dccded;
+}
+
+p, li {color:var(--text);}
+
+.entry { margin-bottom: 3rem; }
+    .meta { font-size: 0.95rem; color: #555; margin-top: 0.5rem; }
+
+/* Layout */
+header, footer {
+  text-align: center;
+  padding-top: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-bottom: 1rem;
 }
 
 main {
-  max-width: 700px;
+  max-width: 900px;
   margin: 0 auto;
-  padding: 2rem 1rem;
+  padding: 1rem;
 }
 
-h2 {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-  color: #333;
+.books {
+  margin-top: 3rem;
 }
 
-p, li, dd {
-  margin-bottom: 1rem;
-  font-size: 1rem;
+.book-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
 }
 
-ul, dl {
-  margin-left: 1.25rem;
+.book {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  padding: 1rem;
+  max-width: 300px;
+  flex: 1 1 260px;
 }
 
-dl dt {
-  font-weight: bold;
+.book img {
+  max-width: 100%;
+  border-radius: 4px;
+}
+
+.btn {
+  display: inline-block;
   margin-top: 1rem;
+  background-color: #6a4ea3;
+  color: white;
+  text-decoration: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 4px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #5a3e93;
 }
 
 footer {
+  margin-top: 4rem;
+  font-size: 0.9rem;
+  color: #777;
   text-align: center;
-  margin-top: 3rem;
-  padding-top: 1rem;
-  border-top: 1px solid #ccc;
-  font-size: 0.875rem;
-  color: #666;
+  padding: 2rem 1rem;
+  background-color: #f5f2f8;
+  border-top: 1px solid #ddd;
 }
 
-footer a {
-  color: #666;
-  text-decoration: none;
+.footer-tagline {
+  margin-top: 1rem;
+  font-style: italic;
+  color: #a084c4;
 }
 
-footer a:hover {
-  text-decoration: underline;
+section.cta {
+    text-align: center;
 }
+
 
 @media (max-width: 600px) {
-  header h1 {
-    font-size: 1.5rem;
-  }
-
-  h2 {
-    font-size: 1.25rem;
-  }
-
-  nav ul {
+  .book-list {
     flex-direction: column;
     align-items: center;
+  }
+  .nav {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top:0;
+  }
+  .nav-links {
+    flex-direction: column;
     gap: 0.5rem;
-  }
-
-  main {
-    padding: 1.5rem 1rem;
-  }
-
-  p, li, dd {
-    font-size: 0.95rem;
+    margin-top: 0.5rem;
   }
 }
