@@ -182,7 +182,21 @@ section.cta {
     text-align: center;
 }
 
-
+dt{
+  margin-top: 16pt;
+  font-weight: bold;
+}
+.glossary-legend ul {
+  list-style-type: none;   /* removes bullets */
+  padding-left: 0;         /* removes default indentation */
+  margin: 0;               /* optional: tightens spacing */
+}
+.glossary-legend li {
+  margin: 0.25em 0;
+}
+.glossary-legend li a{
+  text-decoration: none;
+}
 @media (max-width: 600px) {
   .book-list {
     flex-direction: column;
@@ -190,7 +204,7 @@ section.cta {
   }
   .nav {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     margin-top:0;
   }
   .nav-links {
