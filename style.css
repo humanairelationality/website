@@ -114,8 +114,8 @@ header, footer {
   padding-right: 0;
   padding-bottom: 1rem;
 }
-
-main {
+ 
+main, header p {
   max-width: 900px;
   margin: 0 auto;
   padding: 1rem;
