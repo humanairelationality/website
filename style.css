@@ -197,6 +197,51 @@ dt{
 .glossary-legend li a{
   text-decoration: none;
 }
+
+.preprint-row {
+  display: flex;
+  flex-wrap: wrap;      /* allow wrapping */
+  gap: 1rem;
+  justify-content: center;
+  margin: 1.5rem 0;
+}
+
+.preprint-row figure {
+  flex: 1 1 320px;      /* flexible: min ~320px, can grow */
+  max-width: 480px;     /* don’t let them stretch too wide */
+  margin: 0;
+}
+
+.preprint-row img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--radius-sm);
+}
+
+.preprint-row a img {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.preprint-row a img:hover {
+  transform: scale(1.02);
+  box-shadow: var(--shadow);
+}
+
+.preprint-row figcaption {
+  font-size: 0.85em;          /* slightly smaller than body */
+  color: var(--muted);        /* use your muted grey tone */
+  font-style: italic;         /* caption-like feel */
+  line-height: 1.4;
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+  @media (max-width: 768px) {
+    .preprint-row figure {
+      max-width: 100%; /* full width on mobile */
+    }
+  }
+
 @media (max-width: 600px) {
   .book-list {
     flex-direction: column;
@@ -212,4 +257,38 @@ dt{
     gap: 0.5rem;
     margin-top: 0.5rem;
   }
+}
+
+.faq dt {
+  margin-top: 1rem;
+  font-weight: bold;
+  color: var(--brand-ink);
+}
+.faq dd {
+  margin: 0.5rem 0 1.5rem 0; /* give more space below answers */
+}
+
+.faq dt::before {
+  content: "Q: ";
+  color: var(--brand);
+}
+.faq dd::before {
+  content: "A: ";
+  font-weight: bold;
+  color: var(--muted);
+}
+
+.callout {
+  background-color: var(--panel);   /* soft purple-tinted background */
+  border-left: 4px solid var(--brand); 
+  padding: 1rem 1.25rem;
+  margin: 1.5rem 0;
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.callout strong {
+  color: var(--brand-ink);          /* emphasize bold text inside */
 }
