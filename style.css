@@ -292,3 +292,42 @@ dt{
 .callout strong {
   color: var(--brand-ink);          /* emphasize bold text inside */
 }
+
+ 
+        .hero-rair {
+            background: linear-gradient(135deg, #e8e4f9, #f4f2fc);
+            padding: 3rem 1.2rem;
+            text-align: center;
+            border-radius: 0 0 16px 16px;
+        }
+
+
+        .principles-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .principle {
+            background: #f9f8fd;
+            border-radius: 12px;
+            padding: 1rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .principle h3 {
+            font-family: "Lora", serif;
+            margin-top: 0;
+            color: #402e3a;
+            font-size: 1rem;
+        }
+
+
+
+        @media (max-width: 600px) {
+            .principles-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+  

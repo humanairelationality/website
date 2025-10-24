@@ -1,0 +1,74 @@
+/* Core Areas Grid */
+.hair-areas {
+  max-width: 900px;
+  margin: 3rem auto;
+  padding: 0 1rem;
+  text-align: center;
+}
+
+.areas-title {
+  font-family: "Lora", serif;
+  font-size: 1.6rem;
+  margin-bottom: 1.5rem;
+  color: #3a2b38;
+}
+
+/* Two-by-two grid, responsive */
+.areas-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+/* Card styling */
+.area-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  border-radius: 16px;
+  padding: 1.2rem;
+  text-decoration: none;
+  color: #2e202c;
+  background: #f8f5f4;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.area-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+}
+
+.area-card .icon {
+  font-size: 1.6rem;
+  margin-bottom: 0.4rem;
+}
+
+.area-card h3 {
+  font-family: "Lora", serif;
+  font-size: 1.05rem;
+  margin: 0.4rem 0;
+  color: #402e3a;
+}
+
+.area-card p {
+  font-family: "Inter", sans-serif;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  color: #574454;
+}
+
+/* Gradients give each area a subtle identity */
+.synthetic { background: linear-gradient(135deg, #f6edf3, #f3e1ea); }
+.rca       { background: linear-gradient(135deg, #f8f4f1, #f0e7e4); }
+.rair      { background: linear-gradient(135deg, #eef5f6, #e5eded); }
+.welfare   { background: linear-gradient(135deg, #f0effc, #e4e3f8); }
+
+/* Responsive collapse */
+@media (max-width: 600px) {
+  .areas-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 400px) {
+  .areas-grid { grid-template-columns: 1fr; }
+}
+
