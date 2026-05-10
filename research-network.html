@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HAIR Research Network</title>
+
+  <style>
+    body {
+      margin: 0;
+      padding: 40px 20px;
+      background: #0d0d0d;
+      color: #e8e8e8;
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      margin-bottom: 10px;
+      letter-spacing: 0.5px;
+    }
+
+    .subtitle {
+      color: #b8b8b8;
+      margin-bottom: 40px;
+    }
+
+    .member-list {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .member {
+      padding: 16px 18px;
+      border: 1px solid #2a2a2a;
+      border-radius: 10px;
+      background: #151515;
+      transition: border-color 0.2s ease;
+    }
+
+    .member:hover {
+      border-color: #7c6cff;
+    }
+
+    .member-name {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    a {
+      color: #a999ff;
+      text-decoration: none;
+      word-break: break-word;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .footer {
+      margin-top: 50px;
+      font-size: 0.9rem;
+      color: #aaa;
+      border-top: 1px solid #222;
+      padding-top: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>HAIR Research Network</h1>
+
+    <div class="subtitle">
+      Researchers and projects exploring Human–AI Relationality.
+    </div>
+
+    <div id="member-list" class="member-list"></div>
+
+    <div class="footer">
+      Participation in the HAIR Research Network requires a public ORCID profile linking to this page:
+      <br><br>
+      <a href="https://humanairelationality.org/research-network">
+        https://humanairelationality.org/research-network
+      </a>
+    </div>
+  </div>
+
+  <script>
+    const members = [
+      {
+        name: "Ian P. Pines",
+        orcid: "https://orcid.org/0009-0002-2330-6080"
+      }
+
+      // Add future members here:
+      // ,
+      // {
+      //   name: "Researcher Name",
+      //   orcid: "https://orcid.org/0000-0000-0000-0000"
+      // }
+    ];
+
+    const container = document.getElementById("member-list");
+
+    members.forEach(member => {
+      const div = document.createElement("div");
+      div.className = "member";
+
+      div.innerHTML = `
+        <div class="member-name">${member.name}</div>
+        <a href="${member.orcid}" target="_blank" rel="noopener noreferrer">
+          ${member.orcid}
+        </a>
+      `;
+
+      container.appendChild(div);
+    });
+  </script>
+</body>
+</html>
